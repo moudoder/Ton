@@ -14,20 +14,25 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<img src="img/site-bg.jpg" alt="" class="site-bg">
-<div class="navagation">
-	<a href="#header" class="navagation__link scroll-to active">01</a>
-	<a href="#about" class="navagation__link scroll-to">02</a>
-	<a href="#road" class="navagation__link scroll-to">03</a>
-	<a href="#last" class="navagation__link scroll-to">04</a>
+<img src="img/site-bg.jpg" alt="" class="site-bg pc-true">
+<div class="navagation pc-true">
+	<a href="#header" class="navagation__link scroll-to nav-1 active">01</a>
+	<a href="#about" class="navagation__link nav-2 scroll-to">02</a>
+	<a href="#road" class="navagation__link nav-3 scroll-to">03</a>
+	<a href="#last" class="navagation__link nav-4 scroll-to">04</a>
 </div>
 <header class="header" id="header">
+	<img src="img/light-gold.png" alt="" class="light-gold pc-true">
+	<img src="img/bottom-light.png" alt="" class="bottom-light pc-true">
+	<img src="img/header-light-mob.png" alt="" class="header-light-mob mob-true">
+	<img src="img/header-black-mob.svg" alt="" class="header-black-mob mob-true">
 	<div class="container">
-		<img src="img/gold.png" alt="" class="header-gold">
+		<img src="img/gold.png" alt="" class="header-gold pc-true">
+		<img src="img/gold-mobile.png" alt="" class="header-gold mob-true">
 		<div class="header-top">
 			<div class="header-top-left">
 				<img src="img/logo.svg" alt="" class="header-top__logo">
-				<div class="header-top-list">
+				<div class="header-top-list pc-true">
 					<li><a href="#">Главная</a></li>
 					<li><a href="#">Road Map</a></li>
 				</div>
@@ -43,11 +48,14 @@
 			<h1 class="header-content__title">
 				TON
 			</h1>
+			<h2 class="header-content-bottom__title mob-true">
+				GOLD
+			</h2>
 			<div class="header-content-bottom">
 				<p class="header-content__text">
 					Cоздает <span>крупнейшую международную платформу</span> по торговле физическим золотом, с возможностью обмена физического золота на TGOLD-токен <br>и обратно в крупных городах мира.
 				</p>
-				<h2 class="header-content-bottom__title">
+				<h2 class="header-content-bottom__title pc-true">
 					GOLD
 				</h2>
 			</div>
@@ -56,12 +64,14 @@
 	<div class="header-block">
 		<p class="header-block__title">
 			<img src="img/header-block-icon.svg" alt="">
-			1 TGOLD = <span>55$</span>
+			<strong>1 TGOLD = <span>55$</span></strong>
 		</p>
 	</div>
 </header>
 <section class="about" id="about">
-	<img src="img/shadow.png" alt="" class="about__shadow">
+	<img src="img/planet-light.png" alt="" class="about-planet-light pc-true">
+	<img src="img/stars.png" alt="" class="about-stars pc-true">
+	<img src="img/shadow.png" alt="" class="about__shadow pc-true">
 	<span class="about-play">
 		<img src="img/arrow-about.svg" alt="">
 	</span>
@@ -86,7 +96,7 @@
 			<div class="about-block">
 				<img src="img/about-img.svg" alt="" class="about-block__img">
 				<p class="about-block__text">
-					<span>TGOLD token</span> - это стейблкоин привязанный к стоимости<br> грамма золота, <br>обеспеченный физическим<br> золотом. <strong>(1 TGOLD = 55$)</strong>
+					<span>TGOLD token</span> - это стейблкоин привязанный к стоимости<br> грамма <br class="mob-true">золота, <br>обеспеченный физическим<br class="mob-true"><br> золотом. <strong>(1 TGOLD = 55$)</strong>
 				</p>
 			</div>
 			<div class="about-block">
@@ -100,8 +110,10 @@
 	</div>
 </section>
 <section class="road" id="road">
-	<img src="img/road-bg.svg" alt="" class="road-bg">
+	<img src="img/road-bg.svg" alt="" class="road-bg pc-true">
+	<img src="img/road-light.png" alt="" class="road-light pc-true">
 	<div class="container">
+		<img src="img/road-line-mob.svg" alt="" class="road-line mob-true">
 		<div class="road-top">
 			<div class="title-block">
 				<h3 class="title-block__count">
@@ -115,6 +127,9 @@
 				<h4 class="road-time__title">
 					До перехода на <span>Phase 3</span> осталось всего:
 				</h4>
+				<span class="road-time-content__star">
+					*
+				</span>
 				<div class="road-time-content">
 					<div class="road-time-timer">
 						<span class="day">271</span> : <span class="hour">20</span> : <span class="minuts">12</span> : <span class="second">20</span>
@@ -136,6 +151,9 @@
 		<div class="road-lists">
 			<ul class="road-list road-list--1">
 				<img src="img/line-1.svg" alt="" class="road-list__line">
+				<h4 class="road-list__name mob-true">
+					Phase 1: (2018-2021)
+				</h4>
 				<li><strong>Зарождение</strong> идеи</li>
 				<li><strong>Создание</strong> команды</li>
 				<li><strong>Организация</strong> логистических решений</li>
@@ -146,6 +164,9 @@
 			</ul>
 			<ul class="road-list road-list--2">
 				<img src="img/line-2.svg" alt="" class="road-list__line">
+				<h4 class="road-list__name mob-true">
+					Phase 2: (2021-2022)
+				</h4>
 				<li><strong>Разработка</strong> смарт-контрактов</li>
 				<li><strong>Релиз</strong> TGOLD token</li>
 				<li><strong>Релиз</strong> Ton Gold NFT</li>
@@ -157,18 +178,24 @@
 			</ul>
 			<ul class="road-list road-list--3">
 				<img src="img/line-3.svg" alt="" class="road-list__line">
+				<h4 class="road-list__name mob-true">
+					Phase 3: (2023-2024)
+				</h4>
 				<li><strong>Листинг</strong> на 3+ биржи (tier-2)</li>
 				<li><strong>Старт работы</strong> Ton Gold Platform <br>в 4 финансовых центрах мира.</li>
 				<li><strong>Возможность токенизации</strong> и выхода<br> из TGOLD токена в физическое золото</li>
 				<li>
-					<strong>Старт</strong> международной маркетинговой компании
+					<strong>Старт</strong> международной <br class="mob-true">маркетинговой компании
 				</li>
-				<li><strong>Старт распределения</strong> транзакционных комиссий<br> TGOLD среди держателей Ton Gold NFT</li>
+				<li><strong>Старт распределения</strong> <br class="mob-true">транзакционных комиссий<br class="pc-true"> TGOLD среди держателей Ton Gold NFT</li>
 				<li><strong>Проведение</strong> 3-х независимых аудитов</li>
 			</ul>
 			<ul class="road-list road-list--4">
 				<img src="img/line-4.svg" alt="" class="road-list__line">
-				<li><strong>Старт работы</strong> TGOLD <br>ATM в 5 мегаполисах </li>
+				<h4 class="road-list__name mob-true">
+					Phase 4: (2024-2025)
+				</h4>
+				<li><strong>Старт работы</strong> TGOLD <br class="pc-true">ATM <br class="mob-true">в 5 мегаполисах </li>
 				<li><strong>Листинг</strong> на 15+ бирж</li>
 				<li><strong>Релиз</strong> мобильного приложения<br> Ton Gold Platform и TGOLD Wallet.</li>
 				<li>
@@ -202,15 +229,19 @@
 					</p>
 				</div>
 				<div class="last-block">
-					<a href="#" class="last-block__btn">
-						Купить TON GOLD NFT
-					</a>
-					<p class="last-block__text">
-						В качестве маркетинговой компании и первичной дистрибуции каждый держатель Ton Gold NFT <br>может получить до 21.21 TGold с одной NFT.
-					</p>
+					<div class="last-block-photo mob-true" style="background-image: url('img/last-photo-mob.jpg');"></div>
+					<div class="last-block-wrapper">
+						<a href="#" class="last-block__btn">
+							Купить TON GOLD NFT
+						</a>
+						<p class="last-block__text">
+							В качестве маркетинговой компании и первичной дистрибуции каждый держатель Ton Gold NFT <br>может получить до 21.21 TGold с одной NFT.
+						</p>
+					</div>
+					
 				</div>
 			</div>
-			<div class="last-photo" style="background-image: url('img/last-photo.jpg');">
+			<div class="last-photo pc-true" style="background-image: url('img/last-photo.jpg');">
 				
 			</div>
 		</div>
