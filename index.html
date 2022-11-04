@@ -10,6 +10,7 @@
 	<!-- libs css-->
 	<link rel="stylesheet" href="libs/selectize.js-master/dist/css/selectize.css">
 	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
 	<!-- main css -->
 	<link rel="stylesheet" href="css/main.css">
@@ -42,7 +43,7 @@
 				<a href="img/Ton.pdf" class="header-top__pdf" data-fancybox="pdf">
 					WhitePaper
 				</a>
-				<a href="#" class="header-top__btn">
+				<a href="https://t.me/tongoldbot" class="header-top__btn">
 					Купить TON GOLD NFT
 				</a>
 			</div>
@@ -80,34 +81,34 @@
 	<img src="img/stars.png" alt="" class="about-stars pc-true">
 	<img src="img/shadow.png" alt="" class="about__shadow pc-true">
 	<img src="img/about-bg-mob.png" alt="" class="about-bg mob-true">
-	<span class="about-play">
+	<span class="about-play" data-aos="fade-up" data-aos-delay="200">
 		<img src="img/arrow-about.svg" alt="">
 	</span>
 	<div class="container">
-		<div class="title-block">
-			<h3 class="title-block__count">
+		<div class="title-block" >
+			<h3 class="title-block__count" data-aos="fade-up" data-aos-delay="200">
 				02.
 			</h3>
-			<h2 class="title-block__title">
+			<h2 class="title-block__title" data-aos="fade-up" data-aos-delay="10">
 				<strong>Что такое</strong> <br>
 				TON GOLD? 
 			</h2>
 		</div>
 		<div class="about-row">
-			<div class="about-block">
+			<div class="about-block" data-aos="fade-up" data-aos-delay="50">
 				<img src="img/about-img.svg" alt="" class="about-block__img">
 				<p class="about-block__text">
 					<span>TON GOLD</span> - передовая <br>экосистема, позволяющая<br> совершать обмен токенов<br> TGOLD на золото<br> 
 					в крупных мегаполисах.
 				</p>
 			</div>
-			<div class="about-block">
+			<div class="about-block" data-aos="fade-up" data-aos-delay="100">
 				<img src="img/about-img.svg" alt="" class="about-block__img">
 				<p class="about-block__text">
 					<span>TGOLD token</span> - это стейблкоин привязанный к стоимости<br> грамма <br class="mob-true">золота, <br>обеспеченный физическим<br class="mob-true"><br> золотом. <strong>(1 TGOLD = 55$)</strong>
 				</p>
 			</div>
-			<div class="about-block">
+			<div class="about-block" data-aos="fade-up" data-aos-delay="150">
 				<img src="img/about-img.svg" alt="" class="about-block__img">
 				<p class="about-block__text">
 					<span>Ton Gold Platform</span> - платформа позволяющая позволяющая проводить международные сделки по физическому золоту, обеспечивающая <br>
@@ -118,21 +119,21 @@
 	</div>
 </section>
 <section class="road" id="road">
-	<img src="img/road-bg.svg" alt="" class="road-bg pc-true">
+	<img src="img/road-bg.svg" alt="" class="road-bg pc-true" data-aos="fade-up" data-aos-delay="200" data-aos-offset="500">
 	<img src="img/road-light.png" alt="" class="road-light pc-true">
 	<img src="img/road-bg-mob.png" alt="" class="road-bg-mob mob-true">
 	<div class="container">
-		<img src="img/road-line-mob.svg" alt="" class="road-line mob-true">
+		<img src="img/road-line-mob.svg" alt="" class="road-line mob-true" data-aos="fade-up" data-aos-delay="350">
 		<div class="road-top">
 			<div class="title-block">
-				<h3 class="title-block__count">
+				<h3 class="title-block__count" data-aos="fade-up" data-aos-delay="200">
 					03.
 				</h3>
-				<h2 class="title-block__title">
+				<h2 class="title-block__title" data-aos="fade-up" data-aos-delay="10">
 					<strong>ROAD</strong> MAP
 				</h2>
 			</div>
-			<div class="road-time">
+			<div class="road-time" data-aos="fade-up" data-aos-delay="250">
 				<h4 class="road-time__title">
 					До перехода на <span>Phase 3</span> осталось всего:
 				</h4>
@@ -141,13 +142,13 @@
 				</span>
 				<div class="road-time-content">
 					<div class="road-time-timer">
-						<span class="day">271</span> : <span class="hour">20</span> : <span class="minuts">12</span> : <span class="second">20</span>
+						<span class="day" id="day">271</span> : <span class="hour" id="hour">20</span> : <span class="minuts" id="minuts">12</span> : <span class="second" id="second">20</span>
 					</div>
 					<div class="road-time-info">
-						<span>День</span>
-						<span>Часов</span>
-						<span>Минут</span>
-						<span>Секунд</span>
+						<span >День</span>
+						<span >Часов</span>
+						<span >Минут</span>
+						<span >Секунд</span>
 					</div>
 				</div>
 				<div class="road-time-line">
@@ -219,17 +220,17 @@
 		<div class="last-row">
 			<div class="last-content">
 				<div class="title-block">
-					<h3 class="title-block__count">
+					<h3 class="title-block__count" data-aos="fade-up" data-aos-delay="350">
 						04.
 					</h3>
-					<h2 class="last__subtitle">
+					<h2 class="last__subtitle" data-aos="fade-up" data-aos-delay="150">
 						<img src="img/last-subtitle.svg" alt="">
 					</h2>
-					<h3 class="last__title">
+					<h3 class="last__title" data-aos="fade-up" data-aos-delay="10">
 						<img src="img/last-title.svg" alt="">
 					</h3>
 				</div>
-				<div class="last-text">
+				<div class="last-text" data-aos="fade-up" data-aos-delay="50">
 					<span class="last-text__star">
 						*
 					</span>
@@ -237,10 +238,10 @@
 						Ton Gold NFT - NFT коллекция, созданная <br>на блокчейне TON, посредством которой <br>будет проведено первичное<br> распределение TGOLD токенов 
 					</p>
 				</div>
-				<div class="last-block">
+				<div class="last-block" data-aos="fade-up" data-aos-delay="350">
 					<div class="last-block-photo mob-true" style="background-image: url('img/last-photo-mob.jpg');"></div>
 					<div class="last-block-wrapper">
-						<a href="#" class="last-block__btn">
+						<a href="https://t.me/tongoldbot" class="last-block__btn">
 							Купить TON GOLD NFT
 						</a>
 						<p class="last-block__text">
@@ -250,7 +251,7 @@
 					
 				</div>
 			</div>
-			<div class="last-photo pc-true" style="background-image: url('img/last-photo.jpg');">
+			<div class="last-photo pc-true" style="background-image: url('img/last-photo.jpg');" data-aos="fade-up" data-aos-delay="800">
 				
 			</div>
 		</div>
@@ -276,6 +277,7 @@
 <!-- libs js -->
 <script src="js/libs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/common.js"></script>
 </body>
 

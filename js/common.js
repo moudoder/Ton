@@ -6,11 +6,60 @@ $(document).ready(function () {
     $('body,html').animate({scrollTop: top}, 1500);
   });
 
+  AOS.init();
+
+
+  var $element = $('.road-list--1');
+  let counter = 0;
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop() + $(window).height();
+    //Если скролл до конца елемента
+    //var offset = $element.offset().top + $element.height();
+    //Если скролл до начала елемента
+    var offset = $element.offset().top
+    if (scroll > offset && counter == 0) {
+      $('.road-list').addClass('animate-road');
+      counter = 1;
+    }
+  });
+
+
+  var endDate = new Date("2023").getTime();
+  var timer = setInterval(function() {
+      let now = new Date().getTime();
+      let t = endDate - now;
+      
+      if (t >= 0) {
+      
+          let days = Math.floor(t / (1000 * 60 * 60 * 24));
+          let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+          let secs = Math.floor((t % (1000 * 60)) / 1000);
+      
+          document.getElementById("day").innerHTML = days;
+      
+          document.getElementById("hour").innerHTML = ("0"+hours).slice(-2);
+      
+          document.getElementById("minuts").innerHTML = ("0"+mins).slice(-2);
+      
+          document.getElementById("second").innerHTML = ("0"+secs).slice(-2);
+      
+      } else {
+          //document.getElementById("timer").innerHTML = "The countdown is over!";
+      
+      }
+      
+  }, 1000);
+
   $('.navagation__link').on('click', function() {
   	$('.navagation__link').removeClass('active');
   	$(this).addClass('active');
   	return false;
   })
+
+  if($(window).width() <= '767'){
+    
+  }
 
   $(".phone").mask("+7 (999) 999-9999");
 
