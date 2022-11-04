@@ -24,7 +24,7 @@ $(document).ready(function () {
   });
 
 
-  var endDate = new Date("2023").getTime();
+  var endDate = new Date("Sep 1, 2023").getTime();
   var timer = setInterval(function() {
       let now = new Date().getTime();
       let t = endDate - now;
@@ -57,98 +57,70 @@ $(document).ready(function () {
   	return false;
   })
 
+  let gold = '';
   if($(window).width() <= '767'){
-    
+    gold = $('.header-gold')[1];
+  }
+  else{
+    gold = $('.header-gold')[0];
   }
 
   $(".phone").mask("+7 (999) 999-9999");
 
-  var block_show1 = null;
-  var block_show2 = null;
-  var block_show3 = null;
-  var block_show4 = null;
-
-  function scrollTracking_1(){
-    var wt = $(window).scrollTop();
-    var wh = $(window).height();
-    var et = $('#header').offset().top;
-    var eh = $('#header').outerHeight();
-    if (wt + wh >= et && wt + wh - eh * 2 <= et + (wh - eh)){
-      if (block_show1 == null || block_show1 == false) {
-        $('.nav-1').addClass('active');
-      }
-      block_show1 = true;
-    } else {
-      if (block_show1 == null || block_show1 == true) {
-        $('.nav-1').removeClass('active');
-      }
-      block_show1 = false;
-    }
+  
+  let scrollPos = 0;
+  let min_top_gold = 0;
+  let max_top_gold = 10;
+  if($(window).width() <= '767'){
+    $(gold).css('top','12%')
+    min_top_gold = 12;
+    max_top_gold = 16;
   }
-  function scrollTracking_2(){
-    var wt = $(window).scrollTop();
-    var wh = $(window).height();
-    var et = $('#about').offset().top;
-    var eh = $('#about').outerHeight();
-    if (wt + wh >= et && wt + wh - eh * 2 <= et + (wh - eh)){
-      if (block_show2 == null || block_show2 == false) {
-        $('.nav-2').addClass('active');
-      }
-      block_show2 = true;
-    } else {
-      if (block_show2 == null || block_show2 == true) {
-        $('.nav-2').removeClass('active');
-      }
-      block_show2 = false;
-    }
+  else{
+    $(gold).css('top','0%')
   }
-  function scrollTracking_3(){
-    var wt = $(window).scrollTop();
-    var wh = $(window).height();
-    var et = $('#road').offset().top;
-    var eh = $('#road').outerHeight();
-    if (wt + wh >= et && wt + wh - eh * 2 <= et + (wh - eh)){
-      if (block_show3 == null || block_show3 == false) {
-        $('.nav-3').addClass('active');
-      }
-      block_show3 = true;
-    } else {
-      if (block_show3 == null || block_show3 == true) {
-        $('.nav-3').removeClass('active');
-      }
-      block_show3 = false;
-    }
-  }
-  function scrollTracking_4(){
-    var wt = $(window).scrollTop();
-    var wh = $(window).height();
-    var et = $('#last').offset().top;
-    var eh = $('#last').outerHeight();
-    if (wt + wh >= et && wt + wh - eh * 2 <= et + (wh - eh)){
-      if (block_show4 == null || block_show4 == false) {
-        $('.nav-4').addClass('active');
-        $('.navagation').addClass('navagation-hidden')
-      }
-      block_show4 = true;
-    } else {
-      if (block_show4 == null || block_show4 == true) {
-        $('.nav-4').removeClass('active');
-        $('.navagation').removeClass('navagation-hidden')
-      }
-      block_show4 = false;
-    }
-  }
+  let scrl = gold.style.top;
   $(window).scroll(function(){
-    scrollTracking_1();
-    scrollTracking_2();
-    scrollTracking_3();
-    scrollTracking_4();
+     let st = $(this).scrollTop();
+     if (st > scrollPos){
+       if (parseInt(scrl) < max_top_gold) {
+         scrl = parseInt(scrl) + 1;
+         let stp = scrl + '%';
+         $(gold).css('top',stp)
+       }
+     } else {
+       if (parseInt(scrl) > min_top_gold) {
+         scrl = parseInt(scrl) - 1;
+         let stp = scrl + '%';
+         $(gold).css('top',stp)
+       }
+     }
+     scrollPos = st;
   });
+
+  var sections = $('section');
+  $(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
     
-  $(document).ready(function(){ 
-    scrollTracking_1();
-    scrollTracking_2();
-    scrollTracking_3();
-    scrollTracking_4();
+    sections.each(function() {
+      var top = $(this).offset().top - 400,
+          bottom = top + $(this).outerHeight();
+      
+      if (cur_pos >= top && cur_pos <= bottom) {
+        let counter_sec = $(this).attr('id');
+        if (counter_sec == 4) {
+          $('.navagation').addClass('navagation-hidden');
+        }
+        else{
+          $('.navagation').removeClass('navagation-hidden');
+        }
+        $('.navagation').find('a').removeClass('active');
+        sections.removeClass('active');
+        
+        $(this).addClass('active');
+        $('.navagation').find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+      }
+    });
   });
+
 })
