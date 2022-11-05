@@ -68,35 +68,6 @@ $(document).ready(function () {
   $(".phone").mask("+7 (999) 999-9999");
 
   
-  let scrollPos = 0;
-  let min_top_gold = 0;
-  let max_top_gold = 10;
-  if($(window).width() <= '767'){
-    $(gold).css('top','12%')
-    min_top_gold = 12;
-    max_top_gold = 16;
-  }
-  else{
-    $(gold).css('top','0%')
-  }
-  let scrl = gold.style.top;
-  $(window).scroll(function(){
-     let st = $(this).scrollTop();
-     if (st > scrollPos){
-       if (parseInt(scrl) < max_top_gold) {
-         scrl = parseInt(scrl) + 1;
-         let stp = scrl + '%';
-         $(gold).css('top',stp)
-       }
-     } else {
-       if (parseInt(scrl) > min_top_gold) {
-         scrl = parseInt(scrl) - 1;
-         let stp = scrl + '%';
-         $(gold).css('top',stp)
-       }
-     }
-     scrollPos = st;
-  });
 
   var sections = $('section');
   $(window).on('scroll', function () {
@@ -123,4 +94,10 @@ $(document).ready(function () {
     });
   });
 
+  let bg = document.querySelector('.parallax__layer_gold');
+  window.addEventListener('mousemove', function(e) {
+      let x = e.clientX / window.innerWidth;
+      let y = e.clientY / window.innerHeight;  
+      bg.style.transform = 'translate(-' + x * 4 + '%, -' + y * 4 + '%)';
+  });
 })
